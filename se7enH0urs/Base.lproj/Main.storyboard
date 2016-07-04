@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Alarm View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AlarmViewController" customModule="lessthanten" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="prP-i3-rIG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.98431372640000003" green="0.66274511810000003" blue="0.23529411850000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="vQ0-mL-zf7" customClass="AlarmFlowLayout" customModule="lessthanten" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlarmCollectionViewCell" id="LNB-S8-Xah" customClass="AlarmCollectionViewCell" customModule="lessthanten" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hj-lR-N4t">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="300"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="8hj-lR-N4t" secondAttribute="bottom" id="0Dc-Q6-yEH"/>
+                                            <constraint firstItem="8hj-lR-N4t" firstAttribute="top" secondItem="LNB-S8-Xah" secondAttribute="top" id="9CA-it-nT4"/>
+                                            <constraint firstAttribute="trailing" secondItem="8hj-lR-N4t" secondAttribute="trailing" id="UaY-ug-Ztk"/>
+                                            <constraint firstItem="8hj-lR-N4t" firstAttribute="leading" secondItem="LNB-S8-Xah" secondAttribute="leading" id="yqg-t3-h3u"/>
+                                        </constraints>
+                                        <size key="customSize" width="600" height="600"/>
+                                        <connections>
+                                            <outlet property="hoursLabel" destination="8hj-lR-N4t" id="ZX1-Ht-Nds"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="BVb-iA-EvP"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tcn-Ks-ahz"/>
+                                </connections>
+                            </collectionView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRo-Ng-uTV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23:59" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ac6-Qz-vRC">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.25999566610000002" green="0.76275214950000003" blue="0.4197933271" alpha="1" colorSpace="calibratedRGB"/>
+                                        <size key="shadowOffset" width="4" height="4"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUd-ew-rZ3">
+                                        <rect key="frame" x="256" y="506" width="88" height="44"/>
+                                        <color key="backgroundColor" red="0.25999566610000002" green="0.76275214950000003" blue="0.4197933271" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Dok-ZF-OiQ"/>
+                                            <constraint firstAttribute="width" constant="88" id="Pvz-oc-OdX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mKo-gi-soR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGe-dh-R2b">
+                                        <rect key="frame" x="278" y="50" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="6DZ-kl-oFN"/>
+                                            <constraint firstAttribute="width" constant="44" id="I2m-f9-QgF"/>
+                                        </constraints>
+                                        <state key="normal" image="spotify_icon"/>
+                                        <connections>
+                                            <action selector="spotifyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TUT-PC-zqT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="NUd-ew-rZ3" firstAttribute="centerX" secondItem="uRo-Ng-uTV" secondAttribute="centerX" id="0V8-hU-nEv"/>
+                                    <constraint firstItem="hGe-dh-R2b" firstAttribute="top" secondItem="uRo-Ng-uTV" secondAttribute="top" constant="50" id="5PJ-JC-1aL"/>
+                                    <constraint firstItem="hGe-dh-R2b" firstAttribute="centerX" secondItem="uRo-Ng-uTV" secondAttribute="centerX" id="5s1-tI-4Bz"/>
+                                    <constraint firstAttribute="bottom" secondItem="NUd-ew-rZ3" secondAttribute="bottom" constant="50" id="8SK-5l-gIn"/>
+                                    <constraint firstAttribute="trailing" secondItem="NUd-ew-rZ3" secondAttribute="trailing" constant="66" id="BmI-WR-KjF"/>
+                                    <constraint firstItem="Ac6-Qz-vRC" firstAttribute="leading" secondItem="uRo-Ng-uTV" secondAttribute="leading" id="BmZ-pn-M4r"/>
+                                    <constraint firstAttribute="trailing" secondItem="hGe-dh-R2b" secondAttribute="trailing" constant="50" id="Fpa-fr-dVD"/>
+                                    <constraint firstItem="Ac6-Qz-vRC" firstAttribute="top" secondItem="uRo-Ng-uTV" secondAttribute="top" id="gOW-zA-gXB"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ac6-Qz-vRC" secondAttribute="bottom" id="sMy-hi-OYb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ac6-Qz-vRC" secondAttribute="trailing" id="wCh-mC-eiD"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Fpa-fr-dVD"/>
+                                        <exclude reference="BmI-WR-KjF"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="prP-i3-rIG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1wc-Cv-nh8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="prP-i3-rIG" secondAttribute="bottom" id="9RX-oD-4uc"/>
+                            <constraint firstAttribute="trailing" secondItem="prP-i3-rIG" secondAttribute="trailing" id="AWB-MP-GuW"/>
+                            <constraint firstItem="uRo-Ng-uTV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Rp9-PP-bNk"/>
+                            <constraint firstItem="prP-i3-rIG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Slz-a3-yEs"/>
+                            <constraint firstAttribute="trailing" secondItem="uRo-Ng-uTV" secondAttribute="trailing" id="WRb-6l-fRY"/>
+                            <constraint firstItem="uRo-Ng-uTV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="e9o-gG-if7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uRo-Ng-uTV" secondAttribute="bottom" id="tuX-ie-Oha"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alarmTimerLabel" destination="Ac6-Qz-vRC" id="abA-B9-v6o"/>
+                        <outlet property="alarmTimerView" destination="uRo-Ng-uTV" id="bPT-hX-Lzu"/>
+                        <outlet property="collectionView" destination="prP-i3-rIG" id="5CZ-MA-zPx"/>
+                        <outlet property="doneButton" destination="NUd-ew-rZ3" id="fIu-DE-Yjl"/>
+                        <outlet property="spotifyButton" destination="hGe-dh-R2b" id="FJf-Iw-9UG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="351"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="spotify_icon" width="1024" height="1024"/>
+    </resources>
+</document>
